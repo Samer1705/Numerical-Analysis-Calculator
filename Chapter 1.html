@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapter 1</title>
+  <link rel="stylesheet" href="css/all.min.css" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animate.min.css">
+</head>
+
+<body>
+  <div class="container text-center">
+    <div class="row">
+      <!-- title -->
+      <h2 class="lead fs-1 bg-primary rounded-5 py-2 mt-2 mb-4 animate__animated animate__rubberBand">
+        Chapter 1
+      </h2>
+      <!-- Mathematical Function -->
+      <div class="row">
+        <div class="col-md-1">
+          <label for="fx">F(X):</label>
+        </div>
+        <div class="col-md-11">
+          <input class="form-control" id="fx" type="text" placeholder="Mathematical Function" />
+        </div>
+      </div>
+      <!-- Error Percentage -->
+      <div class="row">
+        <div class="col-md-1">
+          <label for="err">Error:</label>
+        </div>
+        <div class="col-md-11">
+          <input class="form-control" id="err" type="text" placeholder="Error In Percentage" />
+        </div>
+      </div>
+      <!-- Choose Method -->
+      <div class="wrapper d-flex justify-content-evenly">
+        <div>
+          <input id="Bisection" type="radio" name="Method" value="Bisection" />
+          <label class="cool-radio-blue" for="Bisection">Bisection</label>
+        </div>
+        <div>
+          <input id="FalsePos" type="radio" name="Method" value="FalsePos" />
+          <label class="cool-radio-blue" for="FalsePos">False Position</label>
+        </div>
+        <div>
+          <input id="FixedPoint" type="radio" name="Method" value="FixedPoint" />
+          <label class="cool-radio-blue" for="FixedPoint">Simple Fixed Point</label>
+        </div>
+        <div>
+          <input id="Newton" type="radio" name="Method" value="Newton" />
+          <label class="cool-radio-blue" for="Newton">Newton</label>
+        </div>
+        <div>
+          <input id="Scant" type="radio" name="Method" value="Scant" />
+          <label class="cool-radio-blue" for="Scant">Scant</label>
+        </div>
+      </div>
+      <!-- Extra Attributes -->
+      <!-- Bisection -->
+      <div id="Bis-Div" class="d-none">
+        <div class="row">
+          <div class="col-md-1">
+            <label for="Bis-Xl">Xl:</label>
+          </div>
+          <div class="col-md-11">
+            <input class="form-control" id="Bis-Xl" type="text" placeholder="Bisection Method (Xl)" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-1">
+            <label for="Bis-Xu">Xu:</label>
+          </div>
+          <div class="col-md-11">
+            <input class="form-control" id="Bis-Xu" type="text" placeholder="Bisection Method (Xu)" />
+          </div>
+        </div>
+      </div>
+      <!-- End Bisection -->
+      <!-- False Position -->
+      <div id="False-Div" class="d-none">
+        <div class="row">
+          <div class="col-md-1">
+            <label for="False-Xl">Xl:</label>
+          </div>
+          <div class="col-md-11">
+            <input class="form-control" id="False-Xl" type="text" placeholder="False Position Method (Xl)" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-1">
+            <label for="Flase-Xu">Xu:</label>
+          </div>
+          <div class="col-md-11">
+            <input class="form-control" id="False-Xu" type="text" placeholder="False Position Method (Xu)" />
+          </div>
+        </div>
+      </div>
+      <!-- End False Position -->
+      <!-- Simple Fixed Point -->
+      <div id="Simple-Div" class="d-none">
+        <div class="row">
+          <div class="col-md-1">
+            <label for="Simple-Xi">Xi:</label>
+          </div>
+          <div class="col-md-11">
+            <input class="form-control" id="Simple-Xi" type="text" placeholder="Simple Fixed Point Method (Xi)" />
+          </div>
+        </div>
+      </div>
+      <!-- End Simple Fixed Point -->
+      <!-- Newton -->
+      <div id="Newton-Div" class="d-none">
+        <div class="row">
+          <div class="col-md-1">
+            <label for="Newton-Xi">Xi:</label>
+          </div>
+          <div class="col-md-11">
+            <input class="form-control" id="Newton-Xi" type="text" placeholder="Newton Method (Xi)" />
+          </div>
+        </div>
+      </div>
+      <!-- End Newton -->
+      <!-- Scant -->
+      <div id="Scant-Div" class="d-none">
+        <div class="row">
+          <div class="col-md-1">
+            <label for="Scant-Xi">Xi:</label>
+          </div>
+          <div class="col-md-11">
+            <input class="form-control" id="Scant-Xi" type="text" placeholder="Scant Method (Xi)" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-1">
+            <label for="Scant-Xi-1">Xi-1:</label>
+          </div>
+          <div class="col-md-11">
+            <input class="form-control" id="Scant-Xi-1" type="text" placeholder="Scant Method (Xi-1)" />
+          </div>
+        </div>
+      </div>
+      <!-- End Scant -->
+      <!-- buttons -->
+      <div class="d-felx justify-content-center">
+        <a href="index.html"><button class="btn-blue my-5"><span>Back</span></button></a>
+        <button class="btn-blue my-5" onclick="Calculate()"><span>Calculate</span></button>
+      </div>
+      <!-- End buttons -->
+      <!-- Results -->
+      <div id="results" class="d-none">
+        <table class="table text-white">
+          <thead>
+            <tr id="table-head">
+            </tr>
+          </thead>
+          <tbody id="table-body">
+          </tbody>
+        </table>
+        <h2>Root: <span id="root"></span></h2>
+      </div>
+    </div>
+  </div>
+  <div class="animation-box">
+    <div id="animationID" class="w-25 d-none">
+      <img src="Images/SbowMan Blue.png" class="w-100">
+    </div>
+  </div>
+
+  <script src="js/math.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/Chapter 1.js"></script>
+  <script src="js/index.js"></script>
+</body>
+
+</html>

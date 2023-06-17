@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Numerical Analysis</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/animate.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="container text-center">
+            <h2 class="lead fs-1 bg-danger rounded-5 py-2 mt-2 mb-4 animate__animated animate__rubberBand">Chapter 2
+            </h2>
+            <div class="d-flex justify-content-center">
+                <div class="row w-50">
+                    <div class="col-md-1 border-danger border-bottom border-start border-top border-5 rounded-1"></div>
+                    <div class="col-md-10 p-5">
+                        <div class="row">
+                            <div class="col-md-3"><input class="squared" type="number" placeholder="X1" id="x11"></div>
+                            <div class="col-md-3"><input class="squared" type="number" placeholder="X2" id="x21"></div>
+                            <div class="col-md-3"><input class="squared" type="number" placeholder="X3" id="x31"></div>
+                            <div class="col-md-3"><input class="squared" type="number" placeholder="R1" id="x41"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3"><input class="squared" type="number" placeholder="X1" id="x12"></div>
+                            <div class="col-md-3"><input class="squared" type="number" placeholder="X2" id="x22"></div>
+                            <div class="col-md-3"><input class="squared" type="number" placeholder="X3" id="x32"></div>
+                            <div class="col-md-3"><input class="squared" type="number" placeholder="R2" id="x42"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3"><input class="squared" type="number" placeholder="X1" id="x13"></div>
+                            <div class="col-md-3"><input class="squared" type="number" placeholder="X2" id="x23"></div>
+                            <div class="col-md-3"><input class="squared" type="number" placeholder="X3" id="x33"></div>
+                            <div class="col-md-3"><input class="squared" type="number" placeholder="R3" id="x43"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 border-danger border-bottom border-end border-top border-5 rounded-1"></div>
+                </div>
+            </div>
+            <div class="wrapper d-flex justify-content-evenly">
+                <div>
+                    <input id="GE" type="radio" name="Method" value="GE" />
+                    <label class="cool-radio-red" for="GE">Gaussian elimination</label>
+                </div>
+                <div>
+                    <input id="GJE" type="radio" name="Method" value="GJE" />
+                    <label class="cool-radio-red" for="GJE">Gauss Jordan Elimination</label>
+                </div>
+                <div>
+                    <input id="LU" type="radio" name="Method" value="LU" />
+                    <label class="cool-radio-red" for="LU">LU</label>
+                </div>
+                <div>
+                    <input id="Cramer" type="radio" name="Method" value="Cramer" />
+                    <label class="cool-radio-red" for="Cramer">Cramer</label>
+                </div>
+            </div>
+            <div id="PP" class="d-flex justify-content-center d-none">
+                <div class="form-check form-switch">
+                    <input class="form-check-input btn btn-light bg-danger border-danger" type="checkbox" role="switch"
+                        id="flexSwitchCheckDefault">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Partial Pivoting</label>
+                </div>
+            </div>
+            <div class="d-felx justify-content-center">
+                <a href="index.html"><button class="btn-red my-5"><span>Back</span></button></a>
+                <button class="btn-red my-5" onclick="Calculate()"><span>Calculate</span></button>
+            </div>
+        </div>
+        <!-- Results -->
+        <div id="results" class="d-none justify-content-center">
+            <div class="d-flex justify-content-between w-50">
+                <h2>X1: <span id="resX1"></span></h2>
+                <h2>X2: <span id="resX2"></span></h2>
+                <h2>X3: <span id="resX3"></span></h2>
+            </div>
+        </div>
+    </div>
+    <div class="animation-box">
+        <div id="animationID" class="w-25 d-none">
+            <img src="Images/SbowMan Red.png" class="w-100">
+        </div>
+    </div>
+    <script src="js/math.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/Chapter 2.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
